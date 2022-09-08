@@ -29,6 +29,7 @@ export default function Dish (props) {
     let minus= () => {
       if (el.count===1 || !el.count){
         setState({cart:state.cart.filter(item => el.id !==item.id)})
+        return;
       }
       const i = state.cart.findIndex(item=>item.id === el.id)
       setState({

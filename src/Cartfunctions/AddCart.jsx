@@ -20,7 +20,7 @@ export default function AddCart(props) {
 
         <button>Clear cart</button>
     </div>
-    <div style={{display:"flex", gap:30, marginLeft:20}}>
+    <div style={{display:"flex", gap:30, marginLeft:20,flexWrap:"wrap"}}>
 
     {newData1.map((el) => {
         return(
