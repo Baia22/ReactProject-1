@@ -10,12 +10,8 @@ export default function AddCart(props) {
     let count =props.count
     
   
-    let totalPrice = 0;
-    {newData1.map((item, count) => {
-      totalPrice+=parseInt(item.price)
-    })}
-    console.log(count)
-  
+    let totalPrice =newData1.reduce((sumPrice, item) =>{
+      return sumPrice + parseInt(item.price) * item.count;}, 0)  
   return (
     <>
     <div style={{display:"flex", justifyContent:"space-around", height:20, marginBottom:50, marginTop:50, alignItems:"center"}}>

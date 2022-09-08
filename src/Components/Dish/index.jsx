@@ -8,11 +8,11 @@ export default function Dish (props) {
   const {canDelete = false} = props;
   let navigate= useNavigate()
   const {state , setState} = useContext(Context)
-  let [count, setCount]=useState(1)
 
 
   const changeStatus= (e, el)=>{
     e.preventDefault();
+    el.count =1;
     setState({cart:[...state.cart, el]});
   }
 
@@ -20,16 +20,20 @@ export default function Dish (props) {
     const isAdded = state.cart.some(item => item.id===el.id)
 
     let plus= () => {
-      setCount(count + 1)
-      console.log(count)
+      const i = state.cart.findIndex(item=> item.id === el.id);
+      setState({
+        cart: [...state.cart.slice(0, i), {...el,count: (el.count || 0 ) +1}, ...state.cart.slice (i +1)]
+      })
     }
 
     let minus= () => {
-      if (count===1){
+      if (el.count===1 || !el.count){
         setState({cart:state.cart.filter(item => el.id !==item.id)})
       }
-      setCount(count - 1)
-      console.log(count)
+      const i = state.cart.findIndex(item=>item.id === el.id)
+      setState({
+        cart:[...state.cart.slice (0,i), {...el, count: el.count -1}, ...state.cart.slice(i + 1)]
+      })
     }
 
     let multiply = (a , b)=> {
@@ -37,7 +41,7 @@ export default function Dish (props) {
         parseInt(a) * parseInt(b)
       )
     }
-    let equation= multiply(count, el.price)
+    let equation= multiply(el.count, el.price)
 
   const remove =()=>{
     setState({cart:state.cart.filter(item => el.id !==item.id)})
@@ -51,7 +55,7 @@ export default function Dish (props) {
               <img className="imgCss" src={el.image} alt="" />
               <div className='buttons'>
               {canDelete && <button onClick={minus}>-</button>}
-              {canDelete && <p>Quantity : {count} </p>}
+              {canDelete && <p>Quantity : {el.count} </p>}
               {canDelete && <button onClick={plus}>+</button>}
               </div>
               
@@ -66,7 +70,7 @@ export default function Dish (props) {
                 <button  onClick={()=>{navigate(`/details/${el.id}`)   }} 
                 className="detailsButton">Details</button>
               </div>
-              {canDelete && <h3 className='total'>Total Price: {count} x {el.price}$ = {equation} </h3>}
+              {canDelete && <h3 className='total'>Total Price: {el.count} x {el.price}$ = {equation} </h3>}
 
               {canDelete && <button className='removeCard' onClick={remove}>Remove cart</button>}
 
