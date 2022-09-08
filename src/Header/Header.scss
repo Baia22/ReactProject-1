@@ -1,0 +1,35 @@
+.header {
+    width:100vw;
+    height:60px;
+    box-shadow: 0 3px 5px rgba(57,63,72, 0.3);
+    display: flex;
+    align-items: center;
+    background-color: #52796f;
+
+
+
+.navigation {
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+}
+
+.navigation li a {
+    color:white;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    &:hover {
+        background-color: #354f52;
+    }
+    &.active {
+        background-color: #354f52;
+    }
+}
+}
+
+.spanCart {
+    color: #5fbcd1;
+}

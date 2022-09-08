@@ -1,0 +1,72 @@
+.menu{
+    display: inline-block;
+}
+
+.eachCardDesign {
+    display:inline-flex;
+    width:180px;
+    flex-wrap:wrap;
+    box-sizing:border-box;
+    align-items:center;
+    transition: transform 0.3s;
+    transform : scale(1);
+
+
+    &:hover {
+        transform : scale(1.1);
+    }
+}
+
+.cardN{
+    width:100%;
+    height:100%; 
+    border-radius:10px;
+    display:flex;
+    flex-direction:column; 
+    background-color:#00f5d4;
+    position: relative;
+    &:hover {
+        background-color: #006d77;
+        .addCart {
+            display: block;
+            border-radius: 5px;
+            background-color: aquamarine;}
+    }
+}
+
+.addCart {
+    position: absolute;
+    display: none;
+    width: 100px;
+    top: 0px;
+    left: 40%;
+    cursor: pointer;
+    
+}
+
+.imgCss {
+    width:100%;
+    height:120px; 
+    border-radius:5px;
+}
+
+.descriptionParagraph {
+    display:flex;
+    justify-content:center; 
+    align-items:center; 
+    gap:15px;
+}
+
+.detailsButton {
+    background-color:#9b5de5; 
+    border-radius:5px; 
+    width:60px;
+}
+
+.cardsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:20px;
+    margin-top:20px;
+}

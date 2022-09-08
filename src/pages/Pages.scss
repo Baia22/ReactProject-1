@@ -1,0 +1,29 @@
+.detailsCss{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.photoCss {
+    width:250;
+    border-radius:10px;
+
+    img{
+        margin-top: 50px;
+        width:450px;
+        border-radius: 10px;
+    }
+}
+
+.description{
+    display:flex; 
+    flex-direction:column; 
+    border-radius:10px; 
+    background-color:#d0f4de; 
+    width:600px; 
+    align-items:center; 
+    justify-content:space-between; 
+    color:#ee9c81;
+    margin-bottom: 50px;
+}
