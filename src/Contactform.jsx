@@ -4,7 +4,7 @@ import "./Contactform.css"
 export default function Contactform() {
   return (
     <>
-    <div style={{width:"100vw"}}>
+    <div className='mainBody'>
         <form class="contact-from" action="" method="get" autocomplete="off" >
             <h3 class="title">Contact Form</h3>              
 

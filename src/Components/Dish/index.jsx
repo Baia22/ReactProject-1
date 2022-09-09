@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import { Context } from '../../Context'
 import { useNavigate } from 'react-router-dom'
 import "./Dish.scss"
@@ -49,7 +49,7 @@ export default function Dish (props) {
   }
 
     return(
-        <div className='cardsWrapper'>
+        <div className='cardsWrapper' key={el.id}>
           <div key={el.id} text={el.category} 
           className="eachCardDesign">
             <div className="cardN">

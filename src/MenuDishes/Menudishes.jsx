@@ -7,8 +7,8 @@ import Dish from '../Components/Dish/index'
 export default function Menudishes() {
 
   return (
-    <div className='cardsWrapper'>
-    {data.map((el, index)=>{
+    <div className='cardsWrapper' key={data.id}>
+    {data.map((el)=>{
       return(
       <Dish el={el}/>
       )

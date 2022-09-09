@@ -1,19 +1,28 @@
+@media only screen and (max-width: 600px) {
+    .wholefooter .footer1 {
+    display: none;    
+    }
+    .footer h3 {
+        display: none;
+    }
+}
+
+
+
 .wholefooter{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width:100vw;
     height:150px;
     position: absolute;
     bottom: 0;
     background-color: #354f52;
-
 }
 
 .footer {
     height:150px;
     padding-bottom: 20px;
-    width:200px;
 
    .navigation {
     list-style:none;

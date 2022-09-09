@@ -5,7 +5,7 @@ import Dish from '../Components/Dish'
 export default function Shortlydishes() {
     const newData=data.slice(0,6)
   return (
-    <div className='cardsWrapper'>
+    <div className='cardsWrapper' key={data.id}>
     {newData.map((el, index)=>{
         return(
           <Dish el={el}/>
